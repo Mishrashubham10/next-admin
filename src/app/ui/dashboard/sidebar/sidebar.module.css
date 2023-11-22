@@ -1,0 +1,60 @@
+.container {
+    position: sticky;
+    top: 2.4rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.userImage {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userDetail {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: 500;
+}
+
+.userTitle { 
+    font-size: .8rem;
+    color: var(--textSoft);
+}
+
+.list {
+    list-style: none;
+}
+
+.cat {
+    color: var(--textSoft);
+    font-weight: bold;
+    font-size: .85rem;
+    margin: .6rem 0;
+}
+
+.logout {
+    padding: 1rem;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 1rem;
+}
+
+.logout:hover {
+    background-color: #2e374a;
+}
