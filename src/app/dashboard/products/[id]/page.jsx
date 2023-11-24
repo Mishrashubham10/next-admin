@@ -1,17 +1,23 @@
+import { updateProduct } from '@/app/lib/actions';
+import { fetchProduct } from '@/app/lib/data';
 import styles from '@/app/ui/dashboard/products/singleProduct/singleProduct.module.css';
 import Image from 'next/image';
 
-const SingleProduct = () => {
+const SingleProduct = async ({params}) => {
+  const {id} = params;
+  const product = await fetchProduct(id)
+
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imageContainer}>
-          <Image src="/noproduct.jpg" fill alt="" className={styles.image} />
+          <Image src={product.img || "/noproduct.jpg"} fill alt="" className={styles.image} />
         </div>
-        Iphone
+        {product.name}
       </div>
       <div className={styles.formContainer}>
-        <form className={styles.form}>
+        <form className={styles.form} action={updateProduct}>
+          <input type="text" name='id' value={product.id} />
           <label htmlFor="title">Title</label>
           <input type="text" name="title" placeholder="Title.." />
           <label htmlFor="price">Price</label>

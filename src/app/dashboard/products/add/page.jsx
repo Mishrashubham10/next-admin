@@ -1,9 +1,10 @@
+import { addProduct } from '@/app/lib/actions';
 import styles from '@/app/ui/dashboard/products/addProduct/addProduct.module.css';
 
 const AddProduct = () => {
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
+      <form className={styles.form} action={addProduct}>
         <input
           type="text"
           placeholder="title"

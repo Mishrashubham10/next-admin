@@ -1,9 +1,11 @@
+"use server";
+import { addUser } from '@/app/lib/actions';
 import styles from '@/app/ui/dashboard/users/addUser/addUser.module.css';
 
-const AddUser = () => {
+const AddUser = async () => {
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
+      <form action={addUser} className={styles.form}>
         <input
           type="text"
           placeholder="username"
@@ -35,12 +37,12 @@ const AddUser = () => {
           className={styles.input}
         />
         <select name="isAdmin" id='isAdmin'>
-          <option value={false} selected>Is Admin</option>
+          <option value={false}>Is Admin</option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>
         <select name="isActive" id='isActive'>
-          <option value={true} selected>Is Active</option>
+          <option value={true}>Is Active</option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>

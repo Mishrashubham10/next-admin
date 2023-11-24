@@ -1,9 +1,8 @@
-import styles from './page.module.css'
-
-export default function Home() {
+// TODO
+const Homepage = () => {
   return (
-    <main className={styles.main}>
-      <h1>Running...</h1>
-    </main>
+    <div>Homepage</div>
   )
 }
+
+export default Homepage
